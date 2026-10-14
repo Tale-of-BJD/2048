@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>2048 · 数字合成</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="2048 首页"><span class="mark">2</span><span>数字<span class="mark-accent">游戏</span></span></a>
+      <span class="edition">PUZZLE NO. 01</span>
+    </header>
+
+    <section class="game-shell" aria-label="2048 游戏">
+      <div class="intro">
+        <div class="title-wrap"><div><p class="eyebrow">一场关于数字的小游戏</p><h1>2048<span>.</span></h1></div><div class="sunburst" aria-hidden="true">✳</div></div>
+        <p class="subtitle">滑动方块，让相同的数字相遇。<br class="desktop-break">合成 2048，挑战你的最高分。</p>
+        <div class="score-row" aria-label="分数">
+          <div class="score-box"><span>当前分数</span><strong id="score">0</strong><i id="score-add" aria-live="polite"></i></div>
+          <div class="score-box best-box"><span>最高纪录</span><strong id="best">0</strong></div>
+        </div>
+        <div class="action-row"><button class="new-game" id="new-game" type="button"><span>↻</span> 新游戏</button><button class="undo" id="undo" type="button" aria-label="撤销上一步" disabled><span>↶</span> 撤销</button></div>
+        <div class="how-to"><div class="how-icon">⌁</div><div><strong>怎么玩</strong><p>按方向键或 <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移动方块；手机上可以直接滑动。两个相同数字碰到一起时会合并。</p></div></div>
+      </div>
+
+      <div class="board-column">
+        <div class="board-heading"><div><span class="live-dot"></span><span id="game-status">开始一局吧</span></div><span class="best-note">目标 <b>2048</b></span></div>
+        <div class="board-wrap" id="board-wrap">
+          <div class="board" id="board" role="grid" aria-label="2048 游戏棋盘"></div>
+          <div class="end-overlay" id="end-overlay" hidden>
+            <div class="end-card"><div class="end-star" id="end-star">✳</div><h2 id="end-title">太棒了！</h2><p id="end-copy">你合成了 2048。</p><div class="end-actions"><button id="keep-playing" class="keep-playing" type="button">继续挑战</button><button id="play-again" class="play-again" type="button">再来一局</button></div></div>
+          </div>
+        </div>
+        <div class="board-foot"><span><i class="foot-swatch"></i> 每次合并都会增加分数</span><span>✦ <b>保持专注</b></span></div>
+      </div>
+    </section>
+
+    <footer class="footer"><span>简简单单，合出大数字。</span><span>离线可玩 <b>·</b> 不用安装</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
